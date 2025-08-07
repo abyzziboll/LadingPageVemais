@@ -1,0 +1,522 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #FFFFFF;
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../Referencias/carro1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Classes de animação */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Background pattern */
+.background-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Referencias/carro1.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Background para seções específicas */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../Referencias/carro1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.features-section {
+    background-image: linear-gradient(rgba(255, 102, 0, 0.9), rgba(255, 102, 0, 0.9)), url('../Referencias/carro1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../Referencias/carro2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.how-to-sell-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../Referencias/carro2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 80px 0;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+}
+
+.logo {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    color: #FFFFFF;
+}
+
+.hero-title .highlight {
+    color: #FF6600 !important;
+    font-weight: bold;
+}
+
+/* Garantir que a cor laranja seja aplicada em todos os contextos */
+.highlight,
+span.highlight,
+.hero-title span.highlight,
+.section-title span.highlight {
+    color: #FF6600 !important;
+    font-weight: bold;
+}
+
+/* Sobrescrever qualquer estilo do Bootstrap */
+.text-white .highlight,
+.text-white span.highlight {
+    color: #FF6600 !important;
+}
+
+/* Regra mais específica para garantir que funcione */
+body .hero-title .highlight,
+body .section-title .highlight,
+body .section-subtitle .highlight {
+    color: #FF6600 !important;
+    font-weight: bold !important;
+}
+
+/* Regra final para garantir que a cor laranja seja aplicada */
+*[class*="highlight"] {
+    color: #FF6600 !important;
+    font-weight: bold !important;
+}
+
+.highlight {
+    color: #FF6600 !important;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.criteria-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.criteria-box {
+    border: 2px solid #FF6600;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.criteria-label {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.criteria-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    background-color: #00CC00;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 204, 0, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #00AA00;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 204, 0, 0.4);
+}
+
+.btn-whatsapp i {
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+}
+
+.feature-item {
+    padding: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title .highlight {
+    position: relative;
+}
+
+.section-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF6600;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* How to Sell Section */
+.how-to-sell-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.sell-method {
+    margin-bottom: 80px;
+}
+
+.method-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step {
+    background-color: transparent;
+    border: 2px solid #FF6600;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.step-icon {
+    color: #FF6600;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.step-content p {
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.step-connector {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6600 50%, transparent 50%);
+    background-size: 10px 2px;
+    background-repeat: repeat-x;
+    flex-shrink: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+    
+    .hero-section {
+        background-attachment: scroll;
+    }
+    
+    .features-section {
+        background-attachment: scroll;
+    }
+    
+    .about-section {
+        background-attachment: scroll;
+    }
+    
+    .how-to-sell-section {
+        background-attachment: scroll;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .brand-name {
+        font-size: 2rem;
+    }
+    
+    .criteria-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .criteria-box {
+        min-width: 250px;
+    }
+    
+    .process-steps {
+        flex-direction: column;
+    }
+    
+    .step-connector {
+        width: 2px;
+        height: 30px;
+        background: linear-gradient(180deg, #FF6600 50%, transparent 50%);
+        background-size: 2px 10px;
+        background-repeat: repeat-y;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .method-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .brand-name {
+        font-size: 1.8rem;
+    }
+    
+    .criteria-box {
+        min-width: 200px;
+        padding: 15px;
+    }
+    
+    .criteria-value {
+        font-size: 1.5rem;
+    }
+    
+    .btn-whatsapp {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .features-section,
+    .about-section,
+    .how-to-sell-section {
+        padding: 40px 0;
+    }
+    
+    .step {
+        min-width: 200px;
+        padding: 20px 15px;
+    }
+}
+
+/* Melhorias de acessibilidade */
+.btn-whatsapp:focus {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 2px;
+}
+
+/* Otimizações de performance */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-left,
+.animate-slide-right {
+    will-change: opacity, transform;
+}
